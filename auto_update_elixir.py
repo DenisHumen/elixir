@@ -92,7 +92,7 @@ def update_nodes(ip):
     port = 22
 
     try:
-        command = 'bash <(curl -s https://raw.githubusercontent.com/MeSmallMan/scripts/main/elixir_update.sh)'
+        command = 'bash <(curl -s https://raw.githubusercontent.com/DenisHumen/elixir/refs/heads/main/elixir_update.sh)'
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
