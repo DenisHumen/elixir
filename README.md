@@ -36,15 +36,20 @@ CREATE DATABASE IF NOT EXISTS DATA;
 -- Использовать созданную базу данных
 USE DATA;
 
--- Создать таблицу 'elixir'
-CREATE TABLE IF NOT EXISTS elixir (
-    wallet_address TEXT PRIMARY KEY,  -- Адрес кошелька
-    online TEXT,                       -- Статус онлайн (🟢, ❌ или ОШИБКА-ПРОВЕРИТЬ)
-    uptime_week TEXT                   -- Время работы за неделю в текстовом формате
+-- Создать таблицу с нужной структурой
+CREATE TABLE IF NOT EXISTS my_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,  -- Уникальный идентификатор (автоинкремент)
+    ids INT DEFAULT NULL,                -- Дополнительный идентификатор 
+    online TEXT DEFAULT NULL,            -- Статус онлайн
+    uptime_week TEXT DEFAULT NULL,       -- Время работы за неделю
+    transaction TEXT DEFAULT NULL,       -- Информация о транзакции
+    name TEXT DEFAULT NULL,              -- Имя
+    desktop TEXT DEFAULT NULL,           -- Информация о контейнере
+    gray_ip TEXT DEFAULT NULL,           -- Серый IP
+    white_ip TEXT DEFAULT NULL,          -- Белый IP
+    private_key TEXT DEFAULT NULL,       -- Приватный ключ
+    wallet_address TEXT DEFAULT NULL,    -- Адрес кошелька
+    mnemonic TEXT NOT NULL,              -- Мнемоническая фраза (обязательное поле)
+    last_updated TEXT DEFAULT NULL       -- Дата последнего обновления
 );
 
--- Создать таблицу 'proxy'
-CREATE TABLE IF NOT EXISTS proxy (
-    id INT AUTO_INCREMENT PRIMARY KEY, -- Уникальный идентификатор прокси
-    IP TEXT                             -- IP-адрес прокси
-);
